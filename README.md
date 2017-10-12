@@ -5,10 +5,6 @@ VhistaGPS is a GPS for the visually impaired. Using ARKit, CoreLocation and Core
 ## How to build this App?
 
 
-## Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/VhistaInc/VhistaGPS-iOS/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
 ## Support or Contact
 
 hello@vhista.com
