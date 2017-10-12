@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VhistaGPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-en-Hhi">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FY6-sA-B48">
+                                        <rect key="frame" x="0.0" y="8" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Iw3-Ga-Xgh"/>
+                                        </constraints>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Za3-G1-kXr"/>
+                                            <barButtonItem style="plain" id="RQB-9b-v4q">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wpS-aR-yK6">
+                                                    <rect key="frame" x="172" y="1" width="31" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="VhistaGPSLogoSmall"/>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="6iS-Ia-CNI"/>
+                                        </items>
+                                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </toolbar>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hecho con ❤️ en Colombia 🇨🇴" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-EV-roH">
+                                        <rect key="frame" x="0.0" y="690" width="375" height="44"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="fGa-0f-oa4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOm-6X-cIq">
+                                        <rect key="frame" x="8" y="632" width="359" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Reconocer Ubicación"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Uag-jB-BCf"/>
+                                        </constraints>
+                                        <state key="normal" title="Reconocer Ubicación">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="radialAnalysis:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OS1-MR-mhg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TgX-EV-roH" secondAttribute="bottom" id="2g6-9G-Iby"/>
+                                    <constraint firstAttribute="trailing" secondItem="TgX-EV-roH" secondAttribute="trailing" id="8rp-HR-rgS"/>
+                                    <constraint firstItem="JOm-6X-cIq" firstAttribute="leading" secondItem="Gje-en-Hhi" secondAttribute="leading" constant="8" id="Gfh-pz-T4T"/>
+                                    <constraint firstItem="TgX-EV-roH" firstAttribute="leading" secondItem="Gje-en-Hhi" secondAttribute="leading" id="Tq9-fR-T7e"/>
+                                    <constraint firstItem="FY6-sA-B48" firstAttribute="leading" secondItem="Gje-en-Hhi" secondAttribute="leading" id="gKS-vc-4V7"/>
+                                    <constraint firstItem="TgX-EV-roH" firstAttribute="top" secondItem="JOm-6X-cIq" secondAttribute="bottom" constant="8" id="lcr-zz-8L3"/>
+                                    <constraint firstAttribute="trailing" secondItem="JOm-6X-cIq" secondAttribute="trailing" constant="8" id="oJH-OA-3tI"/>
+                                    <constraint firstAttribute="trailing" secondItem="FY6-sA-B48" secondAttribute="trailing" id="sXL-dh-8eT"/>
+                                    <constraint firstItem="FY6-sA-B48" firstAttribute="top" secondItem="Gje-en-Hhi" secondAttribute="top" constant="8" id="t25-hC-i6X"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gje-en-Hhi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FhF-MK-BiG"/>
+                            <constraint firstItem="Gje-en-Hhi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VmR-tD-YDT"/>
+                            <constraint firstItem="Gje-en-Hhi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kND-1L-MuA"/>
+                            <constraint firstItem="Gje-en-Hhi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x0M-W2-WbY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="interfaceView" destination="Gje-en-Hhi" id="q9v-nn-aZl"/>
+                        <outlet property="topToolbar" destination="FY6-sA-B48" id="Src-zR-wMR"/>
+                        <segue destination="lHG-Lo-wDw" kind="presentation" identifier="GoToRadar" animates="NO" id="NOa-fX-R4f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
+        </scene>
+        <!--Sonar View Controller-->
+        <scene sceneID="Tkr-4H-5eQ">
+            <objects>
+                <viewController id="lHG-Lo-wDw" customClass="SonarViewController" customModule="VhistaGPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m3D-kB-hHI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-G8-93Z" customClass="SonarView" customModule="Sonar">
+                                <rect key="frame" x="0.0" y="44" width="375" height="668"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oC6-9C-eU9">
+                                <rect key="frame" x="8" y="720" width="359" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uv-2m-5cF">
+                                        <rect key="frame" x="0.0" y="0.0" width="179.66666666666666" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Volver Atrás"/>
+                                        <state key="normal" title="Volver Atrás">
+                                            <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBack:" destination="lHG-Lo-wDw" eventType="touchUpInside" id="BrY-vv-7gE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGS-NV-GyX">
+                                        <rect key="frame" x="179.66666666666663" y="0.0" width="179.33333333333337" height="50"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Volver a Describir">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="describeAgain:" destination="lHG-Lo-wDw" eventType="touchUpInside" id="9WV-o5-uBJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LIH-5B-1w2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oC6-9C-eU9" firstAttribute="top" secondItem="q4h-G8-93Z" secondAttribute="bottom" constant="8" id="1Ig-FI-RtJ"/>
+                            <constraint firstItem="daw-cj-rJZ" firstAttribute="bottom" secondItem="oC6-9C-eU9" secondAttribute="bottom" constant="8" id="75G-Qc-ocg"/>
+                            <constraint firstItem="oC6-9C-eU9" firstAttribute="leading" secondItem="daw-cj-rJZ" secondAttribute="leading" constant="8" id="DBp-qD-aYq"/>
+                            <constraint firstItem="q4h-G8-93Z" firstAttribute="trailing" secondItem="daw-cj-rJZ" secondAttribute="trailing" id="jwS-p6-OWh"/>
+                            <constraint firstItem="daw-cj-rJZ" firstAttribute="trailing" secondItem="oC6-9C-eU9" secondAttribute="trailing" constant="8" id="lNy-if-t1o"/>
+                            <constraint firstItem="q4h-G8-93Z" firstAttribute="leading" secondItem="daw-cj-rJZ" secondAttribute="leading" id="mBe-ed-tfK"/>
+                            <constraint firstItem="q4h-G8-93Z" firstAttribute="top" secondItem="daw-cj-rJZ" secondAttribute="top" id="r3S-eK-BjW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="daw-cj-rJZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="sonarView" destination="q4h-G8-93Z" id="KRI-af-DB8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5D-qo-ChW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="132.26600985221674"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="VhistaGPSLogoSmall" width="31" height="42"/>
+    </resources>
+</document>

@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; accessibilityLabel = "Volver Atrás"; ObjectID = "0Uv-2m-5cF"; */
+"0Uv-2m-5cF.accessibilityLabel" = "Volver Atrás";
+
+/* Class = "UIButton"; normalTitle = "Volver Atrás"; ObjectID = "0Uv-2m-5cF"; */
+"0Uv-2m-5cF.normalTitle" = "Volver Atrás";
+
+/* Class = "UIButton"; accessibilityLabel = "Reconocer Ubicación"; ObjectID = "JOm-6X-cIq"; */
+"JOm-6X-cIq.accessibilityLabel" = "Reconocer Ubicación";
+
+/* Class = "UIButton"; normalTitle = "Reconocer Ubicación"; ObjectID = "JOm-6X-cIq"; */
+"JOm-6X-cIq.normalTitle" = "Reconocer Ubicación";
+
+/* Class = "UIButton"; normalTitle = "Volver a Describir"; ObjectID = "QGS-NV-GyX"; */
+"QGS-NV-GyX.normalTitle" = "Volver a Describir";
+
+/* Class = "UILabel"; text = "Hecho con ❤️ en Colombia 🇨🇴"; ObjectID = "TgX-EV-roH"; */
+"TgX-EV-roH.text" = "Hecho con ❤️ en Colombia 🇨🇴";

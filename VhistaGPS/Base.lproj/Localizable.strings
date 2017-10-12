@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  VhistaGPS
+
+  Created by Juan David Cruz Serrano on 10/9/17.
+  Copyright © 2017 Juan David Cruz Serrano. All rights reserved.
+*/
+
+//Speech
+
+"Greeting_Message"  = "Mueve el dispositivo para obtener información de lugares frente a ti";
+
+// System
+
+"No_Camera" = "Necesitas un dispositivo con cámara para usar Vhista.";
+
+"Camera_Access" = "Acceso a la Cámara";
+
+"No_Camera_Access" = "Anteriormente has negado el uso de la cámara y Vhista necesita de esta para funcionar. Toca sobre el boton de Ir a Ajustes presentado a continuación y activa el uso de la cámara.";
+
+"No_Location" = "Necesitas un dispositivo con GPS para usar Vhista GPS.";
+
+"Location_Access" = "Acceso a la Ubicación Actual";
+
+"No_Location_Access" = "Anteriormente has negado el uso de tu ubicación y Vhista necesita de esta para funcionar. Toca sobre el boton de Ir a Ajustes presentado a continuación y activa el uso del GPS";
+
+"Go_To_Settings" = "Ir a Ajustes";
+
+"Not_Reachable" = "Se necesita acceso a internet para usar esta funcionalidad!";
