@@ -21,11 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey(AppKeys().GooglePlacesKey)
         
-        if !global_language.contains("es-") {
-            print("Language not supported, use Spanish instead")
-            global_language = "es-MX"
+        if !global_language.contains("es-") && !global_language.contains("en-") {
+            print("")
+            global_language = "en-US"
+        } else {
+            print("Este es un lenguaje que es soportado por la aplicación")
         }
-        
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)

@@ -12,6 +12,9 @@ import GooglePlaces
 import Alamofire
 import AFNetworking
 
+
+var dismissedSonar = true;
+
 class SonarViewController: UIViewController {
 
     @IBOutlet weak var sonarView: SonarView!
@@ -29,6 +32,11 @@ class SonarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .default
+        dismissedSonar = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        dismissedSonar = true
     }
 
     @IBAction func describeAgain(_ sender: Any) {
@@ -89,7 +97,7 @@ extension SonarViewController {
                     let places = json as! Dictionary<String, Any>
                     for place in places {
                         let placeDict = place.value as! Dictionary<String, Any>
-                        let newPlace = Place.init(name: placeDict["name"] as! String, type: placeDict["type"] as! String,address: placeDict["address"] as! String, latitude: placeDict["latitude"] as! Double, longitude: placeDict["longitude"] as! Double, thumbnailURL: placeDict["thumbnailURL"] as! String, pinType: placeDict["pinType"] as! String)
+                        let newPlace = Place.init(name: placeDict["name"] as! String, type: placeDict["type"] as! String,address: placeDict["address"] as! String, latitude: placeDict["latitude"] as! Double, longitude: placeDict["longitude"] as! Double, thumbnailURL: placeDict["thumbnailURL"] as! String, pinType: placeDict["pinType"] as! String, elevation: placeDict["elevation"] as! Double)
                         self.places.append(newPlace)
                     }
                     self.recognizeLocationDanger()
@@ -119,7 +127,7 @@ extension SonarViewController {
     
     
     func describeLocation() {
-        if sonarView != nil {
+        if sonarView != nil && !dismissedSonar {
             sonarView.reloadData()
         } else {
             return
@@ -174,8 +182,8 @@ extension SonarViewController: SonarViewDelegate, SonarViewDataSource {
             itemView.imageView.setImageWith(URL(string: currentPlace.thumbnailURL)!)
             
             
-            let myCoordinate = CLLocation(coordinate: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude), altitude: 2600)
-            let placeCoordinate = CLLocation(coordinate: CLLocationCoordinate2D(latitude: currentPlace.latitude, longitude: currentPlace.longitude), altitude: 2600)
+            let myCoordinate = CLLocation(coordinate: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude), altitude: userLocation.altitude)
+            let placeCoordinate = CLLocation(coordinate: CLLocationCoordinate2D(latitude: currentPlace.latitude, longitude: currentPlace.longitude), altitude: currentPlace.elevation)
             let distanceInMeters = myCoordinate.distance(from: placeCoordinate)
             
             itemView.nameLabel.text = currentPlace.name + ". \n A " + String(Int(distanceInMeters.rounded())) + " metros, con dirección: " + currentPlace.address

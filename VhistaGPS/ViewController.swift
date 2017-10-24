@@ -53,6 +53,10 @@ class ViewController: UIViewController {
         topToolbar.clipsToBounds = true
     }
     
+    @IBAction func reloadLocations(_ sender: Any) {
+        needPlacesUpdate = true
+    }
+    
     @IBAction func radialAnalysis(_ sender: Any) {
         if !checkCameraPermissions() {
             return
@@ -101,6 +105,10 @@ extension ViewController {
         places = [Place]()
         annotationNodes = [LocationAnnotationNode]()
         
+        for node in sceneLocationView.getLocationNodes() {
+            sceneLocationView.removeLocationNode(locationNode: node)
+        }
+        
         checkNodesTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(checkNodes), userInfo: nil, repeats: true)
         
         let parameters: Parameters = ["latitude": userLocation.coordinate.latitude, "longitude":userLocation.coordinate.longitude]
@@ -112,7 +120,7 @@ extension ViewController {
                     let places = json as! Dictionary<String, Any>
                     for place in places {
                         let placeDict = place.value as! Dictionary<String, Any>
-                        let newPlace = Place.init(name: placeDict["name"] as! String, type: placeDict["type"] as! String,address: placeDict["address"] as! String, latitude: placeDict["latitude"] as! Double, longitude: placeDict["longitude"] as! Double, thumbnailURL: placeDict["thumbnailURL"] as! String, pinType: placeDict["pinType"] as! String)
+                        let newPlace = Place.init(name: placeDict["name"] as! String, type: placeDict["type"] as! String,address: placeDict["address"] as! String, latitude: placeDict["latitude"] as! Double, longitude: placeDict["longitude"] as! Double, thumbnailURL: placeDict["thumbnailURL"] as! String, pinType: placeDict["pinType"] as! String, elevation: placeDict["elevation"] as! Double)
                         self.places.append(newPlace)
                     }
                     self.addPlaceNodesInScene()
@@ -127,7 +135,7 @@ extension ViewController {
         
         for place in places {
             let coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
-            let location = CLLocation(coordinate: coordinate, altitude: 2580)
+            let location = CLLocation(coordinate: coordinate, altitude: place.elevation)
             let image:UIImage!
             
             switch place.pinType {
@@ -151,7 +159,7 @@ extension ViewController {
                 image = textToImage(drawText: place.name, inImage: UIImage(named: "placeholderPin")!, atPoint: CGPoint(x: 0.0, y: 20.0))
             }
             
-            let placeDict = ["name": place.name, "pinType":place.pinType, "type":place.type, "latitude":place.latitude, "longitude":place.longitude, "thumbnailURL": place.thumbnailURL] as [String : Any]
+            let placeDict = ["name": place.name, "pinType":place.pinType, "type":place.type, "latitude":place.latitude, "longitude":place.longitude, "thumbnailURL": place.thumbnailURL, "elevation": place.elevation, "address": place.address] as [String : Any]
             
             let annotationNode = LocationAnnotationNode(location: location, image: image, place: placeDict)
             annotationNodes.append(annotationNode)
@@ -189,7 +197,7 @@ extension ViewController {
         
         let place = (pNode as! LocationAnnotationNode).place
         
-        let placeCoordinate = CLLocation(coordinate: CLLocationCoordinate2D(latitude: place["latitude"] as! Double, longitude: place["longitude"] as! Double), altitude: 2600)
+        let placeCoordinate = CLLocation(coordinate: CLLocationCoordinate2D(latitude: place["latitude"] as! Double, longitude: place["longitude"] as! Double), altitude: place["elevation"] as! Double)
         let distanceInMeters = String(Int(userLocation.distance(from: placeCoordinate).rounded())) // result is in meters
         let stringToSpeak = place["name"] as! String + " a " + distanceInMeters + " metros."
         

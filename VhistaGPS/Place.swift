@@ -17,4 +17,5 @@ struct Place: Codable {
     var longitude: Double
     var thumbnailURL: String
     var pinType: String
+    var elevation: Double
 }
